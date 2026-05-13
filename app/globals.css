@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-exo: 'Exo 2', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-veylo-white text-veylo-black;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
