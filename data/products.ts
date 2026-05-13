@@ -121,6 +121,18 @@ export const products: Product[] = [
     style: "NEON PURPLE",
     colors: ["MORADO", "BLANCO"],
   },
+  {
+    id: "sneaker-nuevo-1",
+    name: "Sneaker Nueva",
+    price: 220000,
+    category: "deportivo",
+    sizes: [36, 37, 38, 39, 40, 41, 42, 43],
+    image: "/shoes/1.jpeg",
+    featured: true,
+    code: "NEW-001",
+    style: "NEW STYLE",
+    colors: ["BLANCO", "NEGRO"],
+  },
 ];
 
 export const categories = [

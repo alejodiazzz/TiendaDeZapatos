@@ -8,6 +8,20 @@ import { StaggerIn } from "./ui/animations";
 import { buildWhatsAppURL, type Product } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 
+const colorMap: Record<string, string> = {
+  "GRIS": "#808080",
+  "NEGRO": "#000000",
+  "PLATA": "#C0C0C0",
+  "CREMA": "#FFFDD0",
+  "BORDADOS": "#D2B48C",
+  "BLANCO": "#FFFFFF",
+  "ROJO": "#FF0000",
+  "AZUL": "#0000FF",
+  "VERDE": "#008000",
+  "DORADO": "#FFD700",
+  "MORADO": "#800080",
+};
+
 interface ProductCardProps {
   product: Product;
   index: number;
@@ -85,6 +99,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
                   <div
                     key={i}
                     className="w-4 h-4 rounded-full border border-veylo-gray-light"
+                    style={{ backgroundColor: colorMap[color] || "#CCCCCC" }}
                     title={color}
                   />
                 ))}

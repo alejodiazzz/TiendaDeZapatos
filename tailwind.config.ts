@@ -20,6 +20,9 @@ const config: Config = {
       fontFamily: {
         "exo-2": ["var(--font-exo-2)", "sans-serif"],
       },
+      animation: {
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
     },
   },
   plugins: [],
