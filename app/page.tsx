@@ -1,7 +1,17 @@
+﻿import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { ProductGrid } from "@/components/ProductGrid";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { Footer } from "@/components/Footer";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <h1 className="text-4xl font-bold text-center pt-20">VEYLO</h1>
+      <Navbar />
+      <Hero />
+      <ProductGrid />
+      <BenefitsSection />
+      <Footer />
     </main>
   );
 }
