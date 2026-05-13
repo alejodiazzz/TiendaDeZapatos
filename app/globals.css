@@ -1,10 +1,14 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
     --font-exo: 'Exo 2', system-ui, sans-serif;
+  }
+
+  * {
+    @apply border-border;
   }
 
   body {

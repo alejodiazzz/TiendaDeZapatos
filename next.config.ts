@@ -1,4 +1,4 @@
-const nextConfig = {
+﻿const nextConfig = {
   images: {
     unoptimized: false,
     formats: ['image/webp'],
