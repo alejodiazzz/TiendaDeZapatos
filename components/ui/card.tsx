@@ -26,7 +26,7 @@ export function Card({ children, className, tilt = true, tiltMax = 10, ...props 
     const rotateX = ((y - centerY) / centerY) * -tiltMax;
     const rotateY = ((x - centerX) / centerX) * tiltMax;
 
-    setTransform(perspective(1000px) rotateX(deg) rotateY(deg) scale3d(1.02, 1.02, 1.02));
+    setTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`);
   };
 
   const handleMouseLeave = () => {

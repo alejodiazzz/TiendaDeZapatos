@@ -7,10 +7,6 @@
     --font-exo: 'Exo 2', system-ui, sans-serif;
   }
 
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-veylo-white text-veylo-black;
   }

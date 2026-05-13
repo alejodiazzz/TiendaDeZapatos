@@ -41,8 +41,8 @@ export function StaggerIn({ children, className, delay = 0, duration = 0.5 }: St
         className
       )}
       style={{
-        transitionDelay: ${delay}ms,
-        transitionDuration: ${duration}s,
+        transitionDelay: `${delay}ms`,
+        transitionDuration: `${duration}s`,
       }}
     >
       {children}
@@ -54,9 +54,10 @@ interface FadeInProps {
   children: React.ReactNode;
   className?: string;
   direction?: "up" | "down" | "left" | "right";
+  delay?: number;
 }
 
-export function FadeIn({ children, className, direction = "up" }: FadeInProps) {
+export function FadeIn({ children, className, direction = "up", delay = 0 }: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -90,9 +91,12 @@ export function FadeIn({ children, className, direction = "up" }: FadeInProps) {
       ref={ref}
       className={cn(
         "transition-all duration-500 ease-out",
-        isVisible ? "opacity-100 translate-0" : opacity-0 ,
+        isVisible ? "opacity-100 translate-0" : `opacity-0 ${transformClasses[direction]}`,
         className
       )}
+      style={{
+        transitionDelay: `${delay}ms`,
+      }}
     >
       {children}
     </div>
