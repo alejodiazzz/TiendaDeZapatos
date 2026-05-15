@@ -1,5 +1,5 @@
-﻿import type { Metadata } from "next";
-import { Exo_2 } from "next/font/google";
+import type { Metadata } from "next";
+import { Exo_2, Cinzel } from "next/font/google";
 import "./globals.css";
 
 const exo2 = Exo_2({
@@ -8,9 +8,18 @@ const exo2 = Exo_2({
   variable: "--font-exo",
 });
 
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-cinzel",
+});
+
 export const metadata: Metadata = {
-  title: "VEYLO - Walk Your Style",
+  title: "DAILUX - Walk Your Style",
   description: "Sneakers Collection - Diseños exclusivos para él y para ella",
+  icons: {
+    icon: "/Favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -20,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={exo2.variable}>{children}</body>
+      <body className={`${exo2.variable} ${cinzel.variable}`}>{children}</body>
     </html>
   );
 }

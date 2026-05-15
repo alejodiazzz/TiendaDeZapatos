@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { Grid } from "./ui/grid";
@@ -15,9 +15,9 @@ export function ProductGrid() {
       : products.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="catalog" className="py-12 px-4 bg-veylo-gray-light">
+    <section id="catalog" className="py-12 px-4 bg-dailux-navy">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-veylo-black mb-8 text-center">
+        <h2 className="text-3xl font-bold text-dailux-sand mb-8 text-center font-brand">
           Nuestra Colección
         </h2>
 
@@ -34,7 +34,7 @@ export function ProductGrid() {
 
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-veylo-gray-text">No hay productos en esta categoría.</p>
+            <p className="text-dailux-sand/50">No hay productos en esta categoría.</p>
           </div>
         )}
       </div>

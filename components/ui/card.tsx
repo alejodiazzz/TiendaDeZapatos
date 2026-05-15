@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -37,7 +37,7 @@ export function Card({ children, className, tilt = true, tiltMax = 10, ...props 
     <div
       ref={cardRef}
       className={cn(
-        "rounded-lg bg-white shadow-sm transition-all duration-300 ease-out",
+        "rounded-lg bg-dailux-charcoal shadow-sm transition-all duration-300 ease-out border border-dailux-gunmetal/30",
         className
       )}
       style={{ transform }}

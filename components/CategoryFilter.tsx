@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { categories, type Category } from "@/data/products";
@@ -19,8 +19,8 @@ export function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryF
           className={cn(
             "px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors",
             selectedCategory === category.id
-              ? "bg-veylo-black text-veylo-white"
-              : "bg-veylo-gray-light text-veylo-black hover:bg-veylo-gray-text/20"
+              ? "bg-dailux-gold text-dailux-black"
+              : "bg-dailux-charcoal text-dailux-sand hover:bg-dailux-gunmetal/40"
           )}
         >
           {category.label}

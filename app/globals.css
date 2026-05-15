@@ -1,14 +1,31 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --font-exo: 'Exo 2', system-ui, sans-serif;
+    /* DAILUX brand color tokens */
+    --color-black:      #0D0D0D;
+    --color-charcoal:   #1A1A1A;
+    --color-gold:       #D4AF37;
+    --color-gunmetal:   #3A3A3A;
+    --color-navy:       #13243B;
+    --color-steel-blue: #2D4B6D;
+    --color-sand:       #DCC7A1;
+    /* Font variables */
+    --font-exo:    'Exo 2', system-ui, sans-serif;
+    --font-cinzel: 'Cinzel', 'Cormorant Garamond', 'Marcellus', serif;
   }
 
   body {
-    @apply bg-veylo-white text-veylo-black;
+    @apply bg-dailux-black text-dailux-sand;
+  }
+}
+
+@layer utilities {
+  .font-brand {
+    font-family: var(--font-cinzel);
+    letter-spacing: 0.2em;
   }
 }
 

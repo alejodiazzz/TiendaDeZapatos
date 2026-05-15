@@ -9,16 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        veylo: {
-          black: "#000000",
-          white: "#FFFFFF",
-          beige: "#D8C19A",
-          "gray-light": "#EAEAEA",
-          "gray-text": "#666666",
+        dailux: {
+          black:       "#0D0D0D",
+          charcoal:    "#1A1A1A",
+          gold:        "#D4AF37",
+          gunmetal:    "#3A3A3A",
+          navy:        "#13243B",
+          "steel-blue": "#2D4B6D",
+          sand:        "#DCC7A1",
         },
       },
       fontFamily: {
-        "exo-2": ["var(--font-exo-2)", "sans-serif"],
+        "exo-2":  ["var(--font-exo)", "sans-serif"],
+        "cinzel": ["var(--font-cinzel)", "'Cormorant Garamond'", "'Marcellus'", "serif"],
       },
       animation: {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",

@@ -41,7 +41,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
     <StaggerIn delay={index * 100}>
       <Card className="overflow-hidden group">
         <CardContent className="p-0">
-          <div className="relative aspect-[3/4] overflow-hidden bg-veylo-gray-light">
+          <div className="relative aspect-[3/4] overflow-hidden bg-dailux-charcoal">
             <Image
               src={product.image}
               alt={product.name}
@@ -50,30 +50,30 @@ export function ProductCard({ product, index }: ProductCardProps) {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             {product.code && (
-              <div className="absolute top-3 left-3 bg-veylo-white/90 backdrop-blur-sm px-3 py-1 rounded-md">
-                <span className="text-xs font-medium text-veylo-black">{product.code}</span>
+              <div className="absolute top-3 left-3 bg-dailux-black/90 backdrop-blur-sm px-3 py-1 rounded-md">
+                <span className="text-xs font-medium text-dailux-sand">{product.code}</span>
               </div>
             )}
           </div>
 
           <div className="p-4 space-y-3">
             {product.style && (
-              <p className="text-xs text-veylo-gray-text uppercase tracking-wider">
-                Estilo: <span className="font-semibold text-veylo-black">{product.style}</span>
+              <p className="text-xs text-dailux-gunmetal uppercase tracking-wider">
+                Estilo: <span className="font-semibold text-dailux-sand">{product.style}</span>
               </p>
             )}
 
-            <h3 className="font-semibold text-veylo-black">{product.name}</h3>
+            <h3 className="font-semibold text-dailux-sand">{product.name}</h3>
 
             <div>
-              <p className="text-xs text-veylo-gray-text uppercase">Precio</p>
-              <p className="text-xl font-bold text-veylo-black">
+              <p className="text-xs text-dailux-gunmetal uppercase">Precio</p>
+              <p className="text-xl font-bold text-dailux-sand">
                 ${product.price.toLocaleString()}
               </p>
             </div>
 
             <div>
-              <p className="text-xs text-veylo-gray-text uppercase mb-2">Tallas Disponibles</p>
+              <p className="text-xs text-dailux-gunmetal uppercase mb-2">Tallas Disponibles</p>
               <div className="flex flex-wrap gap-2">
                 {product.sizes.map((size) => (
                   <button
@@ -82,8 +82,8 @@ export function ProductCard({ product, index }: ProductCardProps) {
                     className={cn(
                       "w-10 h-10 rounded-md border text-sm font-medium transition-colors",
                       selectedSize === size
-                        ? "bg-veylo-black text-veylo-white border-veylo-black"
-                        : "bg-veylo-white text-veylo-black border-veylo-gray-light hover:border-veylo-black"
+                        ? "bg-dailux-gold text-dailux-black border-dailux-gold"
+                        : "bg-dailux-charcoal text-dailux-sand border-dailux-gunmetal hover:border-dailux-gold"
                     )}
                     aria-label={`Talla ${size}`}
                   >
@@ -98,12 +98,12 @@ export function ProductCard({ product, index }: ProductCardProps) {
                 {product.colors.map((color, i) => (
                   <div
                     key={i}
-                    className="w-4 h-4 rounded-full border border-veylo-gray-light"
+                    className="w-4 h-4 rounded-full border border-dailux-gunmetal"
                     style={{ backgroundColor: colorMap[color] || "#CCCCCC" }}
                     title={color}
                   />
                 ))}
-                <span className="text-xs text-veylo-gray-text uppercase">
+                <span className="text-xs text-dailux-gunmetal uppercase">
                   {product.colors.join(" / ")}
                 </span>
               </div>
@@ -115,8 +115,8 @@ export function ProductCard({ product, index }: ProductCardProps) {
               className={cn(
                 "w-full flex items-center justify-center gap-2 py-3 rounded-full font-medium transition-colors",
                 selectedSize
-                  ? "bg-veylo-black text-veylo-white hover:bg-veylo-gray-text"
-                  : "bg-veylo-gray-light text-veylo-gray-text cursor-not-allowed"
+                  ? "bg-dailux-gold text-dailux-black hover:bg-dailux-gold/80"
+                  : "bg-dailux-charcoal text-dailux-gunmetal cursor-not-allowed"
               )}
               aria-label={selectedSize ? "Pedir por WhatsApp" : "Selecciona una talla"}
             >
