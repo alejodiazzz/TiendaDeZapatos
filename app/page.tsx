@@ -5,36 +5,37 @@ import { BenefitsSection } from "@/components/BenefitsSection";
 import { Footer } from "@/components/Footer";
 import prisma from "@/lib/prisma";
 
-export const revalidate = 0; // Forzar regeneración en cada visita para pruebas
+export const revalidate = 0;
 
 export default async function Home() {
   let products: any[] = [];
   let errorMsg = "";
 
   try {
+    // Intento de conexión simple
     products = await prisma.product.findMany({
+      take: 50,
       orderBy: { createdAt: 'desc' }
     });
   } catch (e: any) {
-    console.error(e);
-    errorMsg = "Error conectando a la base de datos: " + e.message;
+    console.error("DEBUG PRISMA ERROR:", e);
+    errorMsg = e.message || "Error desconocido en Prisma";
   }
 
   return (
     <main className="min-h-screen">
-      <Navbar />
-      {errorMsg && (
-        <div className="bg-red-500 text-white p-4 text-center font-bold">
-          {errorMsg}
-        </div>
-      )}
-      <div className="bg-dailux-gold text-dailux-black p-2 text-center text-xs">
-        PRODUCTOS DETECTADOS: {products.length}
+      {/* BARRA DE DIAGNÓSTICO EN LA PARTE SUPERIOR ABSOLUTA */}
+      <div className="fixed top-0 left-0 right-0 z-[9999] bg-red-600 text-white text-center py-1 font-mono text-[10px]">
+        DEBUG: DB_STATUS={errorMsg ? "ERROR" : "OK"} | COUNT={products.length} {errorMsg && `| MSG=${errorMsg.substring(0, 50)}...`}
       </div>
-      <Hero />
-      <ProductGrid products={products} />
-      <BenefitsSection />
-      <Footer />
+
+      <div className="pt-6"> {/* Espacio para la barra de arriba */}
+        <Navbar />
+        <Hero />
+        <ProductGrid products={products} />
+        <BenefitsSection />
+        <Footer />
+      </div>
     </main>
   );
 }
