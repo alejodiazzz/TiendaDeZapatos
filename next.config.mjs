@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverExternalPackages: ['@prisma/client', 'prisma'],
-  },
   images: {
     unoptimized: false,
     formats: ['image/webp'],
