@@ -15,8 +15,8 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: "DAILUX - Walk Your Style",
-  description: "Sneakers Collection - Diseños exclusivos para él y para ella",
+  title: "DAILUX - Colección Exclusiva (V. Dinámica)",
+  description: "Elegancia y exclusividad en cada paso",
   icons: {
     icon: "/Favicon.ico",
   },
