@@ -9,8 +9,11 @@ export default auth((req) => {
   const isOnAdmin = req.nextUrl.pathname.startsWith("/admin");
 
   if (isOnAdmin && !isLoggedIn) {
-    // Redirigir al login usando el host dinámico de la petición
-    return NextResponse.redirect(new URL("/login", req.nextUrl.origin));
+    const url = req.nextUrl.clone();
+    url.pathname = "/login";
+    // Eliminamos los parámetros de búsqueda del callback para evitar loops si los hubiera
+    url.search = `?callbackUrl=${encodeURIComponent(req.nextUrl.pathname)}`;
+    return NextResponse.redirect(url);
   }
   
   return NextResponse.next();

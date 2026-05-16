@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import ProductForm from "@/components/admin/ProductForm";
 import Link from "next/link";
 
