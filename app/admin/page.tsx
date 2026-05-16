@@ -5,8 +5,6 @@ import { formatCurrency } from "@/lib/utils";
 import Image from "next/image";
 import DeleteButton from "@/components/admin/DeleteButton";
 
-export const dynamic = 'force-dynamic';
-
 export default async function AdminDashboard() {
   const products = await prisma.product.findMany({
     orderBy: { createdAt: 'desc' }
