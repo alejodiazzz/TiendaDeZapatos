@@ -4,9 +4,13 @@ import React, { useState } from "react";
 import { Grid } from "./ui/grid";
 import { CategoryFilter } from "./CategoryFilter";
 import { ProductCard } from "./ProductCard";
-import { products, type Category } from "@/data/products";
+import { type Category } from "@/data/products";
 
-export function ProductGrid() {
+interface ProductGridProps {
+  products: any[];
+}
+
+export function ProductGrid({ products }: ProductGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<Category>("todos");
 
   const filteredProducts =

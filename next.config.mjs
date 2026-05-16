@@ -1,8 +1,14 @@
-﻿const nextConfig = {
+const nextConfig = {
   images: {
     unoptimized: false,
     formats: ['image/webp'],
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
