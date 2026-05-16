@@ -1,6 +1,4 @@
 import { PrismaClient } from '@prisma/client';
-import { PrismaPg } from '@prisma/adapter-pg';
-import pg from 'pg';
 
 // Copiamos los datos directamente para evitar problemas de resolución de alias @/ en el script de seed
 const products = [
@@ -138,15 +136,7 @@ const products = [
   },
 ];
 
-const connectionString = process.env.SUPABASE_DATABASE_URL;
-const pool = new pg.Pool({ 
-  connectionString,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
-const adapter = new PrismaPg(pool);
-const prisma = new PrismaClient({ adapter });
+const prisma = new PrismaClient();
 
 async function main() {
   console.log('Iniciando migración de productos...');
@@ -178,5 +168,4 @@ main()
   })
   .finally(async () => {
     await prisma.$disconnect();
-    await pool.end();
   });
