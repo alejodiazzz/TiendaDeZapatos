@@ -8,7 +8,7 @@ import prisma from "@/lib/prisma";
 export const revalidate = 0; // Forzar regeneración en cada visita para pruebas
 
 export default async function Home() {
-  let products = [];
+  let products: any[] = [];
   let errorMsg = "";
 
   try {
